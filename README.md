@@ -1,12 +1,76 @@
-# React + Vite
+# Social App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-featured social networking web application where users can register, log in, create posts, comment on posts, view profiles, and toggle between light and dark themes.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Authentication** — JWT-based login and registration with protected routes
+- **Posts** — Create, view, and delete posts from the home feed
+- **Post Details** — View a single post with its full comment thread
+- **Comments** — Add comments to any post
+- **User Profiles** — View a user's profile and their posts
+- **Dark / Light Mode** — Persistent theme toggle stored in `localStorage`
+- **Form Validation** — Client-side schema validation on login and registration forms
+- **Toast Notifications** — Real-time success and error feedback
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+src/
+├── apis/          # API call functions (auth, posts, comments, profile)
+├── assets/        # Static assets
+├── components/    # Reusable UI components (Navbar, PostItem, Comments, etc.)
+├── context/       # React context providers (auth, theme)
+├── lib/           # Utility helpers and validation schemas
+└── pages/         # Route-level page components (Home, Login, Register, PostDetails)
+```
+
+## Technologies Used
+
+| Category            | Technology                                                                             |
+| ------------------- | -------------------------------------------------------------------------------------- |
+| **Framework**       | [React 19](https://react.dev/)                                                         |
+| **Build Tool**      | [Vite](https://vitejs.dev/)                                                            |
+| **Routing**         | [React Router DOM v7](https://reactrouter.com/)                                        |
+| **Server State**    | [TanStack React Query v5](https://tanstack.com/query)                                  |
+| **HTTP Client**     | [Axios](https://axios-http.com/)                                                       |
+| **Forms**           | [React Hook Form](https://react-hook-form.com/)                                        |
+| **Validation**      | [Zod](https://zod.dev/)                                                                |
+| **Styling**         | [Tailwind CSS v4](https://tailwindcss.com/) + [Bootstrap 5](https://getbootstrap.com/) |
+| **Icons**           | [Font Awesome 6](https://fontawesome.com/)                                             |
+| **Notifications**   | [React Hot Toast](https://react-hot-toast.com/)                                        |
+| **Loading Spinner** | [React Loader Spinner](https://mhnpd.github.io/react-loader-spinner/)                  |
+| **SEO / Head**      | [React Helmet](https://github.com/nfl/react-helmet)                                    |
+| **Linting**         | [ESLint](https://eslint.org/)                                                          |
+
+## Backend API
+
+The app consumes the **Linked Posts** REST API provided by Route Academy:
+
+```
+https://linked-posts.routemisr.com
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js ≥ 18
+
+### Installation
+
+```bash
+npm install
+```
+
+### Development
+
+```bash
+npm run dev
+```
+
+### Production Build
+
+```bash
+npm run build
+```
